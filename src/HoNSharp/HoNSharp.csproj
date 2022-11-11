@@ -12,8 +12,20 @@
     <PackageProjectUrl>https://github.com/RareHoN/HoNSharp</PackageProjectUrl>
     <RepositoryUrl>https://github.com/RareHoN/HoNSharp</RepositoryUrl>
     <PackageTags>HoN;API;</PackageTags>
-    <Version>0.0.2</Version>
-    <PackageReleaseNotes>Initial release.</PackageReleaseNotes>
+    <Version>0.0.4</Version>
+    <PackageReleaseNotes>
+		v.0.0.4
+		- Fixed issues with deserialized {null} into `DateTimeOffset`.
+		
+		v.0.0.3
+		- Added ability to select between FoC and Midwars map for `GetMatchHistoryOverviewAsync` method.
+		
+		v.0.0.2
+		- Updated README.md
+		
+		v.0.0.1
+		- Initial release.
+	</PackageReleaseNotes>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageIcon>icon.png</PackageIcon>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>

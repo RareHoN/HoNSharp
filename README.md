@@ -19,5 +19,5 @@ var honClient = new HoNClient("<HoN Cookie>");
 
 var simplePlayerStats = await honClient.GetSimpleStatsAsync("RareHoN");
 
-var matchHistory = await honClient.GetMatchHistoryOverviewAsync("RareHoN");
+var matchHistory = await honClient.GetMatchHistoryOverviewAsync("RareHoN", Map.Midwars);
 ```

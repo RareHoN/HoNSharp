@@ -1,0 +1,51 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="TestData\get_account_all_hero_stats_response.txt" />
+    <None Remove="TestData\get_match_stats_datetimeoffset_error_response.txt" />
+    <None Remove="TestData\get_match_stats_response.txt" />
+    <None Remove="TestData\match_history_overview_midwars_response.txt" />
+    <None Remove="TestData\match_history_overview_normal_response.txt" />
+    <None Remove="TestData\show_stats_campaign_response.txt" />
+    <None Remove="TestData\simple_stats_response.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="TestData\*">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+	<PackageReference Include="ApprovalTests" Version="5.7.3" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.1.0" />
+    <PackageReference Include="xunit" Version="2.4.1" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.4.3">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="coverlet.collector" Version="3.1.2">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\HoNSharp\HoNSharp.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="TestData\get_account_all_hero_stats_response.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+</Project>

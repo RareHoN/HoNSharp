@@ -1,4 +1,5 @@
 ﻿using HoNSharp.Models;
+using HoNSharp.Models.Enums;
 
 namespace HoNSharp
 {
@@ -12,9 +13,18 @@ namespace HoNSharp
 
         /// <summary>
         /// Get player match history overview.
+        /// 
+        /// Result data is formatted in the following format:
+        /// 
+        /// <para>
+        /// Match Id, Win (1)/Lose(0), Legion(1)/Hellbourne(2), Kills, Deaths, Assists, 4294967295, Match duration (in seconds), Map, Time, Hero
+        /// </para>
+        /// <para>
+        /// Example: 520460,1,2,1,1,1,4294967295,1200,caldavar,11/9/2022,Hero_Geomancer
+        /// </para>
         /// </summary>
         /// <param name="nickname">Player nickname.</param>
-        Task<Response<Dictionary<string, string>>> GetMatchHistoryOverviewAsync(string nickname);
+        Task<Response<Dictionary<string, string>>> GetMatchHistoryOverviewAsync(string nickname, Map map);
 
         /// <summary>
         /// Get campaign stats for the player.

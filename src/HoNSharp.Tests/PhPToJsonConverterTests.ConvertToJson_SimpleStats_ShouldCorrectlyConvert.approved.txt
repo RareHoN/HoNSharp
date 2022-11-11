@@ -1,0 +1,40 @@
+﻿{
+  "nickname": "RareHoN",
+  "level": 1,
+  "level_exp": 0,
+  "hero_num": 0,
+  "avatar_num": 26,
+  "total_played": 20,
+  "mvp_num": 4,
+  "selected_upgrades": {
+    "0": "ai.Eye Heart HoN",
+    "1": "cc.championofnewerth",
+    "2": "cs.Epic Mastery Badge"
+  },
+  "account_id": 83079,
+  "season_id": 22,
+  "season_normal": {
+    "wins": 19,
+    "losses": 1,
+    "win_streak": 0,
+    "current_level": 0
+  },
+  "season_casual": {
+    "wins": 0,
+    "losses": 0,
+    "win_streak": 0,
+    "current_level": 0
+  },
+  "award_top4_name": {
+    "0": "awd_mhdd",
+    "1": "awd_hcs",
+    "2": "awd_masst",
+    "3": "awd_ledth"
+  },
+  "award_top4_num": {
+    "0": 11,
+    "1": 8,
+    "2": 7,
+    "3": 6
+  }
+}

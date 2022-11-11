@@ -316,7 +316,7 @@ namespace HoNSharp.Models
         public string Date { get; set; }
 
         [JsonProperty("time")]
-        public DateTimeOffset Time { get; set; }
+        public DateTimeOffset? Time { get; set; }
 
         [JsonProperty("mname")]
         public object Mname { get; set; }

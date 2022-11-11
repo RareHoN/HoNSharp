@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using HoNSharp.Models;
 using HoNSharp.Converters;
+using HoNSharp.Models.Enums;
 
 #nullable disable
 
@@ -56,15 +57,22 @@ namespace HoNSharp
         /// Get player match history overview.
         /// </summary>
         /// <param name="nickname">Player nickname.</param>
-        public async Task<Response<Dictionary<string, string>>> GetMatchHistoryOverviewAsync(string nickname)
+        public async Task<Response<Dictionary<string, string>>> GetMatchHistoryOverviewAsync(string nickname, Map map)
         {
+            var table = map switch
+            {
+                Map.ForestsOfCaldavar => "campaign",
+                Map.Midwars           => "midwars",
+                _                     => string.Empty
+            };
+
             return await PostAsync<Dictionary<string, string>>(
                 "/client_requester.php",
                 new Dictionary<string, string>
                 {
                     { "f", "match_history_overview" },
                     { "nickname", nickname },
-                    { "table", "midwars" },
+                    { "table", table },
                     { "cookie", _cookie }
                 });
         }
