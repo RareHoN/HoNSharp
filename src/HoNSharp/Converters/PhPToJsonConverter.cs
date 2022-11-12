@@ -7,7 +7,7 @@ namespace HoNSharp.Converters
         private const string _stringKeyRegex = "s:[0-9]+:(?<key>\"[a-zA-Z0-9_]+\");";
         private const string _intKeyRegex = "i:(?<key>[\\-]?[0-9]+);";
 
-        private const string _stringValueRegex = @"s:[0-9]+:(?<value>""[\\\/_\:\-`\s\.,\da-zA-Z]*"");";
+        private const string _stringValueRegex = @"s:[0-9]+:(?<value>""[\\\/_\:\-`\s\.,\da-zA-Z\[\]]*"");";
         private const string _booleanValueRegex = "b:(?<value>[01]{1});";
         private const string _doubleValueRegex = @"d:(?<value>[\-]?[0-9\.0-9]+);";
         private const string _nullValueRegex = "N;";

@@ -24,13 +24,15 @@ namespace HoNSharp
         /// </para>
         /// </summary>
         /// <param name="nickname">Player nickname.</param>
+        /// <param name="map">Map.</param>
         Task<Response<Dictionary<string, string>>> GetMatchHistoryOverviewAsync(string nickname, Map map);
 
         /// <summary>
         /// Get campaign stats for the player.
         /// </summary>
         /// <param name="nickname">Player nickname.</param>
-        Task<Response<CampaignStatsResponse>> GetCampaignStatsAsync(string nickname);
+        /// <param name="map">Map.</param>
+        Task<Response<CampaignStatsResponse>> GetCampaignStatsAsync(string nickname, Map map);
 
         /// <summary>
         /// Get mastery stats for the player.

@@ -38,10 +38,7 @@ namespace HoNSharp
             _cookie = cookie;
         }
 
-        /// <summary>
-        /// Get detailed match stats.
-        /// </summary>
-        /// <param name="matchId">Match Id.</param>
+        /// <inheritdoc />
         public async Task<Response<MatchStatsResponse>> GetMatchStatsAsync(string matchId)
         {
             return await PostAsync<MatchStatsResponse>(
@@ -53,10 +50,7 @@ namespace HoNSharp
                 });
         }
 
-        /// <summary>
-        /// Get player match history overview.
-        /// </summary>
-        /// <param name="nickname">Player nickname.</param>
+        /// <inheritdoc />
         public async Task<Response<Dictionary<string, string>>> GetMatchHistoryOverviewAsync(string nickname, Map map)
         {
             var table = map switch
@@ -77,27 +71,28 @@ namespace HoNSharp
                 });
         }
 
-        /// <summary>
-        /// Get campaign stats for the player.
-        /// </summary>
-        /// <param name="nickname">Player nickname.</param>
-        public async Task<Response<CampaignStatsResponse>> GetCampaignStatsAsync(string nickname)
+        /// <inheritdoc />
+        public async Task<Response<CampaignStatsResponse>> GetCampaignStatsAsync(string nickname, Map map)
         {
+            var table = map switch
+            {
+                Map.ForestsOfCaldavar => "campaign",
+                Map.Midwars => "midwars",
+                _ => string.Empty
+            };
+
             return await PostAsync<CampaignStatsResponse>(
                 "/client_requester.php",
                 new Dictionary<string, string>
                 {
                     { "f", "show_stats" },
                     { "nickname", nickname },
-                    { "table", "campaign" },
+                    { "table", table },
                     { "cookie", _cookie }
                 });
         }
 
-        /// <summary>
-        /// Get mastery stats for the player.
-        /// </summary>
-        /// <param name="nickname">Player nickname.</param>
+        /// <inheritdoc />
         public async Task<Response<MasteryStatsResponse>> GetMasteryStatsAsync(string nickname)
         {
             return await PostAsync<MasteryStatsResponse>(
@@ -111,10 +106,7 @@ namespace HoNSharp
                 });
         }
 
-        /// <summary>
-        /// Get simple player stats.
-        /// </summary>
-        /// <param name="nickname">Player nickname.</param>
+        /// <inheritdoc />
         public async Task<Response<SimpleStatsResponse>> GetSimpleStatsAsync(string nickname)
         {
             return await PostAsync<SimpleStatsResponse>(
@@ -126,10 +118,7 @@ namespace HoNSharp
                 });
         }
 
-        /// <summary>
-        /// Get the player's last played matches.
-        /// </summary>
-        /// <param name="nickname">Player nickname.</param>
+        /// <inheritdoc />
         public async Task<Response<LastPlayerMatchesResponse>> GetLastPlayerMatchesAsync(string nickname)
         {
             return await PostAsync<LastPlayerMatchesResponse>(
@@ -143,9 +132,7 @@ namespace HoNSharp
                 });
         }
 
-        /// <summary>
-        /// Get stats for all heroes.
-        /// </summary>
+        /// <inheritdoc />
         public async Task<Response<AllHeroStatsResponse>> GetAllHeroStatsAsync()
         {
             return await PostAsync<AllHeroStatsResponse>(

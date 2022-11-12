@@ -12,17 +12,23 @@
     <PackageProjectUrl>https://github.com/RareHoN/HoNSharp</PackageProjectUrl>
     <RepositoryUrl>https://github.com/RareHoN/HoNSharp</RepositoryUrl>
     <PackageTags>HoN;API;</PackageTags>
-    <Version>0.0.4</Version>
+    <Version>0.0.6</Version>
     <PackageReleaseNotes>
+		v.0.0.6
+		- Added ability to select between FoC and Midwars map for `GetCampaignStatsAsync` method.
+
+		v.0.0.5
+		- Fixed issues with parsing matches with some specific player nicknames.
+
 		v.0.0.4
 		- Fixed issues with deserialized {null} into `DateTimeOffset`.
-		
+
 		v.0.0.3
 		- Added ability to select between FoC and Midwars map for `GetMatchHistoryOverviewAsync` method.
-		
+
 		v.0.0.2
 		- Updated README.md
-		
+
 		v.0.0.1
 		- Initial release.
 	</PackageReleaseNotes>

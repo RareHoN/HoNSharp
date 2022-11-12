@@ -55,6 +55,19 @@ namespace HoNSharp.Tests
         }
 
         [Fact]
+        public void ConvertToJson_GetMatchStats_WithUnexpectedCharacterError_ShouldCorrectlyConvert()
+        {
+            // Arrange
+            var responseFileContent = ReadFile("get_match_stats_unexpected_character_error_response.txt");
+
+            // Act
+            var result = _converter.ConvertToJson(responseFileContent);
+
+            // Assert
+            Approvals.Verify(FormatJson(result));
+        }
+
+        [Fact]
         public void ConvertToJson_MatchHistoryOverviewMidwars_ShouldCorrectlyConvert()
         {
             // Arrange
@@ -85,6 +98,32 @@ namespace HoNSharp.Tests
         {
             // Arrange
             var responseFileContent = ReadFile("show_stats_campaign_response.txt");
+
+            // Act
+            var result = _converter.ConvertToJson(responseFileContent);
+
+            // Assert
+            Approvals.Verify(FormatJson(result));
+        }
+
+        [Fact]
+        public void ConvertToJson_ShowStatsCampaignMidwars_ShouldCorrectlyConvert()
+        {
+            // Arrange
+            var responseFileContent = ReadFile("show_stats_campaign_midwars_response.txt");
+
+            // Act
+            var result = _converter.ConvertToJson(responseFileContent);
+
+            // Assert
+            Approvals.Verify(FormatJson(result));
+        }
+
+        [Fact]
+        public void ConvertToJson_ShowStatsMastery_ShouldCorrectlyConvert()
+        {
+            // Arrange
+            var responseFileContent = ReadFile("show_stats_mastery_response.txt");
 
             // Act
             var result = _converter.ConvertToJson(responseFileContent);
