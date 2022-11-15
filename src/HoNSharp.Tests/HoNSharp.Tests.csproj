@@ -10,11 +10,15 @@
 
   <ItemGroup>
     <None Remove="TestData\get_account_all_hero_stats_response.txt" />
+    <None Remove="TestData\get_match_stats_another_error_response.txt" />
     <None Remove="TestData\get_match_stats_datetimeoffset_error_response.txt" />
     <None Remove="TestData\get_match_stats_response.txt" />
     <None Remove="TestData\get_match_stats_unexpected_character_error_response.txt" />
+    <None Remove="TestData\match_history_overview_empty_response.txt" />
     <None Remove="TestData\match_history_overview_midwars_response.txt" />
     <None Remove="TestData\match_history_overview_normal_response.txt" />
+    <None Remove="TestData\show_stats_campaign_error_response.txt" />
+    <None Remove="TestData\show_stats_campaign_long_convert_error_response.txt" />
     <None Remove="TestData\show_stats_campaign_midwars_response.txt" />
     <None Remove="TestData\show_stats_campaign_response.txt" />
     <None Remove="TestData\show_stats_mastery_response.txt" />
@@ -47,6 +51,12 @@
 
   <ItemGroup>
     <Content Update="TestData\get_account_all_hero_stats_response.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="TestData\get_match_stats_another_error_response.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

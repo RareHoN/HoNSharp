@@ -57,6 +57,7 @@ namespace HoNSharp
             {
                 Map.ForestsOfCaldavar => "campaign",
                 Map.Midwars           => "midwars",
+                Map.Public            => "player",
                 _                     => string.Empty
             };
 
@@ -145,29 +146,40 @@ namespace HoNSharp
 
         private async Task<Response<T>> PostAsync<T>(string uri, Dictionary<string, string> body)
         {
-            using var request = new HttpRequestMessage(HttpMethod.Post, uri);
+            try
+            {
+                using var request = new HttpRequestMessage(HttpMethod.Post, uri);
 
-            request.Content = new FormUrlEncodedContent(body);
+                request.Content = new FormUrlEncodedContent(body);
 
-            var response = await _httpClient.SendAsync(request);
-            var content = await response.Content.ReadAsStringAsync();
+                var response = await _httpClient.SendAsync(request);
+                var content = await response.Content.ReadAsStringAsync();
 
-            if (!response.IsSuccessStatusCode)
+                if (!response.IsSuccessStatusCode)
+                {
+                    return new Response<T>
+                    {
+                        IsSuccess = false,
+                        StatusCode = response.StatusCode,
+                        ErrorMessage = content,
+                    };
+                }
+
+                return new Response<T>
+                {
+                    IsSuccess = true,
+                    StatusCode = response.StatusCode,
+                    Content = DeserializeContent<T>(content),
+                };
+            }
+            catch (Exception ex)
             {
                 return new Response<T>
                 {
                     IsSuccess = false,
-                    StatusCode = response.StatusCode,
-                    ErrorMessage = content
+                    ErrorMessage = ex.Message,
                 };
             }
-
-            return new Response<T>
-            {
-                IsSuccess = true,
-                StatusCode = response.StatusCode,
-                Content = DeserializeContent<T>(content)
-            };
         }
 
         #region Private methods & IDisposable

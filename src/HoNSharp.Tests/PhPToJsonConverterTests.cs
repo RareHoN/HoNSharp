@@ -1,7 +1,8 @@
 using ApprovalTests;
 using ApprovalTests.Reporters;
-using HoNSharp.Converters;
 using Newtonsoft.Json;
+using HoNSharp.Converters;
+using HoNSharp.Models;
 
 namespace HoNSharp.Tests
 {
@@ -26,6 +27,8 @@ namespace HoNSharp.Tests
 
             // Assert
             Approvals.Verify(FormatJson(result));
+
+            _ = JsonConvert.DeserializeObject<AllHeroStatsResponse>(result);
         }
 
         [Fact]
@@ -39,6 +42,23 @@ namespace HoNSharp.Tests
 
             // Assert
             Approvals.Verify(FormatJson(result));
+
+            _ = JsonConvert.DeserializeObject<MatchStatsResponse>(result);
+        }
+
+        [Fact]
+        public void ConvertToJson_GetMatchStats_WithAnotherError_ShouldCorrectlyConvert()
+        {
+            // Arrange
+            var responseFileContent = ReadFile("get_match_stats_another_error_response.txt");
+
+            // Act
+            var result = _converter.ConvertToJson(responseFileContent);
+
+            // Assert
+            Approvals.Verify(FormatJson(result));
+
+            _ = JsonConvert.DeserializeObject<MatchStatsResponse>(result);
         }
 
         [Fact]
@@ -52,6 +72,8 @@ namespace HoNSharp.Tests
 
             // Assert
             Approvals.Verify(FormatJson(result));
+
+            _ = JsonConvert.DeserializeObject<MatchStatsResponse>(result);
         }
 
         [Fact]
@@ -65,6 +87,8 @@ namespace HoNSharp.Tests
 
             // Assert
             Approvals.Verify(FormatJson(result));
+
+            _ = JsonConvert.DeserializeObject<MatchStatsResponse>(result);
         }
 
         [Fact]
@@ -78,6 +102,8 @@ namespace HoNSharp.Tests
 
             // Assert
             Approvals.Verify(FormatJson(result));
+
+            _ = JsonConvert.DeserializeObject<Dictionary<string, string>>(result);
         }
 
         [Fact]
@@ -91,6 +117,23 @@ namespace HoNSharp.Tests
 
             // Assert
             Approvals.Verify(FormatJson(result));
+
+            _ = JsonConvert.DeserializeObject<Dictionary<string, string>>(result);
+        }
+
+        [Fact]
+        public void ConvertToJson_MatchHistoryOverviewEmpty_ShouldCorrectlyConvert()
+        {
+            // Arrange
+            var responseFileContent = ReadFile("match_history_overview_empty_response.txt");
+
+            // Act
+            var result = _converter.ConvertToJson(responseFileContent);
+
+            // Assert
+            Approvals.Verify(FormatJson(result));
+
+            _ = JsonConvert.DeserializeObject<Dictionary<string, string>>(result);
         }
 
         [Fact]
@@ -104,6 +147,38 @@ namespace HoNSharp.Tests
 
             // Assert
             Approvals.Verify(FormatJson(result));
+
+            _ = JsonConvert.DeserializeObject<CampaignStatsResponse>(result);
+        }
+
+        [Fact]
+        public void ConvertToJson_ShowStatsCampaign_WithLongConvertError_ShouldCorrectlyConvert()
+        {
+            // Arrange
+            var responseFileContent = ReadFile("show_stats_campaign_long_convert_error_response.txt");
+
+            // Act
+            var result = _converter.ConvertToJson(responseFileContent);
+
+            // Assert
+            Approvals.Verify(FormatJson(result));
+
+            _ = JsonConvert.DeserializeObject<CampaignStatsResponse>(result);
+        }
+
+        [Fact]
+        public void ConvertToJson_ShowStatsCampaignError_ShouldCorrectlyConvert()
+        {
+            // Arrange
+            var responseFileContent = ReadFile("show_stats_campaign_error_response.txt");
+
+            // Act
+            var result = _converter.ConvertToJson(responseFileContent);
+
+            // Assert
+            Approvals.Verify(FormatJson(result));
+
+            _ = JsonConvert.DeserializeObject<CampaignStatsResponse>(result);
         }
 
         [Fact]
@@ -117,6 +192,8 @@ namespace HoNSharp.Tests
 
             // Assert
             Approvals.Verify(FormatJson(result));
+
+            _ = JsonConvert.DeserializeObject<CampaignStatsResponse>(result);
         }
 
         [Fact]
@@ -130,6 +207,8 @@ namespace HoNSharp.Tests
 
             // Assert
             Approvals.Verify(FormatJson(result));
+
+            _ = JsonConvert.DeserializeObject<MasteryStatsResponse>(result);
         }
 
         [Fact]
@@ -143,6 +222,8 @@ namespace HoNSharp.Tests
 
             // Assert
             Approvals.Verify(FormatJson(result));
+
+            _ = JsonConvert.DeserializeObject<SimpleStatsResponse>(result);
         }
 
         private string ReadFile(string responseFileName)

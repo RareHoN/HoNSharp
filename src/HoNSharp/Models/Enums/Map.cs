@@ -3,6 +3,7 @@
     public enum Map
     {
         ForestsOfCaldavar,
-        Midwars
+        Midwars,
+        Public
     }
 }

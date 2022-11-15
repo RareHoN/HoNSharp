@@ -12,8 +12,24 @@
     <PackageProjectUrl>https://github.com/RareHoN/HoNSharp</PackageProjectUrl>
     <RepositoryUrl>https://github.com/RareHoN/HoNSharp</RepositoryUrl>
     <PackageTags>HoN;API;</PackageTags>
-    <Version>0.0.6</Version>
+    <Version>0.0.11</Version>
     <PackageReleaseNotes>
+		v.0.0.11
+		- Make all long and double fields nullable.
+		
+		v.0.0.10
+		- Fixed issues with deserializing strings into longs.
+		- `HoNClint` will no longer throw an expection. Instead, exception message will be returned in Response.
+		
+		v.0.0.9
+		- Fixed minor issues with deserializing.
+		
+		v.0.0.8
+		- Fixed issue with parsing NAN double values.
+		
+		v.0.0.7
+		- Fixed issue with parsing stats for some specific players.
+
 		v.0.0.6
 		- Added ability to select between FoC and Midwars map for `GetCampaignStatsAsync` method.
 

@@ -10,7 +10,7 @@ namespace HoNSharp.Models
         public AllHeroStats AllHeroStats { get; set; }
 
         [JsonProperty("vested_threshold")]
-        public long VestedThreshold { get; set; }
+        public long? VestedThreshold { get; set; }
     }
 
     public class AllHeroStats
@@ -34,40 +34,40 @@ namespace HoNSharp.Models
         public string CliName { get; set; }
 
         [JsonProperty("cam_ph_used")]
-        public long CamPhUsed { get; set; }
+        public long? CamPhUsed { get; set; }
 
         [JsonProperty("cam_ph_wins")]
-        public long CamPhWins { get; set; }
+        public long? CamPhWins { get; set; }
 
         [JsonProperty("cam_ph_losses")]
-        public long CamPhLosses { get; set; }
+        public long? CamPhLosses { get; set; }
 
         [JsonProperty("cam_ph_herokills")]
-        public long CamPhHerokills { get; set; }
+        public long? CamPhHerokills { get; set; }
 
         [JsonProperty("cam_ph_deaths")]
-        public long CamPhDeaths { get; set; }
+        public long? CamPhDeaths { get; set; }
 
         [JsonProperty("cam_ph_heroassists")]
-        public long CamPhHeroassists { get; set; }
+        public long? CamPhHeroassists { get; set; }
 
         [JsonProperty("cam_ph_teamcreepkills")]
-        public long CamPhTeamcreepkills { get; set; }
+        public long? CamPhTeamcreepkills { get; set; }
 
         [JsonProperty("cam_ph_denies")]
-        public long CamPhDenies { get; set; }
+        public long? CamPhDenies { get; set; }
 
         [JsonProperty("cam_ph_exp")]
-        public long CamPhExp { get; set; }
+        public long? CamPhExp { get; set; }
 
         [JsonProperty("cam_ph_gold")]
-        public long CamPhGold { get; set; }
+        public long? CamPhGold { get; set; }
 
         [JsonProperty("cam_ph_actions")]
-        public long CamPhActions { get; set; }
+        public long? CamPhActions { get; set; }
 
         [JsonProperty("cam_ph_time_earning_exp")]
-        public long CamPhTimeEarningExp { get; set; }
+        public long? CamPhTimeEarningExp { get; set; }
     }
 
     public class CampaignCasual
@@ -80,40 +80,40 @@ namespace HoNSharp.Models
         public string CliName { get; set; }
 
         [JsonProperty("cs_ph_used")]
-        public long CsPhUsed { get; set; }
+        public long? CsPhUsed { get; set; }
 
         [JsonProperty("cs_ph_wins")]
-        public long CsPhWins { get; set; }
+        public long? CsPhWins { get; set; }
 
         [JsonProperty("cs_ph_losses")]
-        public long CsPhLosses { get; set; }
+        public long? CsPhLosses { get; set; }
 
         [JsonProperty("cs_ph_herokills")]
-        public long CsPhHerokills { get; set; }
+        public long? CsPhHerokills { get; set; }
 
         [JsonProperty("cs_ph_deaths")]
-        public long CsPhDeaths { get; set; }
+        public long? CsPhDeaths { get; set; }
 
         [JsonProperty("cs_ph_heroassists")]
-        public long CsPhHeroassists { get; set; }
+        public long? CsPhHeroassists { get; set; }
 
         [JsonProperty("cs_ph_teamcreepkills")]
-        public long CsPhTeamcreepkills { get; set; }
+        public long? CsPhTeamcreepkills { get; set; }
 
         [JsonProperty("cs_ph_denies")]
-        public long CsPhDenies { get; set; }
+        public long? CsPhDenies { get; set; }
 
         [JsonProperty("cs_ph_exp")]
-        public long CsPhExp { get; set; }
+        public long? CsPhExp { get; set; }
 
         [JsonProperty("cs_ph_gold")]
-        public long CsPhGold { get; set; }
+        public long? CsPhGold { get; set; }
 
         [JsonProperty("cs_ph_actions")]
-        public long CsPhActions { get; set; }
+        public long? CsPhActions { get; set; }
 
         [JsonProperty("cs_ph_time_earning_exp")]
-        public long CsPhTimeEarningExp { get; set; }
+        public long? CsPhTimeEarningExp { get; set; }
     }
 
     public class Ranked
@@ -122,39 +122,39 @@ namespace HoNSharp.Models
         public string CliName { get; set; }
 
         [JsonProperty("rnk_ph_used")]
-        public long RnkPhUsed { get; set; }
+        public long? RnkPhUsed { get; set; }
 
         [JsonProperty("rnk_ph_wins")]
-        public long RnkPhWins { get; set; }
+        public long? RnkPhWins { get; set; }
 
         [JsonProperty("rnk_ph_losses")]
-        public long RnkPhLosses { get; set; }
+        public long? RnkPhLosses { get; set; }
 
         [JsonProperty("rnk_ph_herokills")]
-        public long RnkPhHerokills { get; set; }
+        public long? RnkPhHerokills { get; set; }
 
         [JsonProperty("rnk_ph_deaths")]
-        public long RnkPhDeaths { get; set; }
+        public long? RnkPhDeaths { get; set; }
 
         [JsonProperty("rnk_ph_heroassists")]
-        public long RnkPhHeroassists { get; set; }
+        public long? RnkPhHeroassists { get; set; }
 
         [JsonProperty("rnk_ph_teamcreepkills")]
-        public long RnkPhTeamcreepkills { get; set; }
+        public long? RnkPhTeamcreepkills { get; set; }
 
         [JsonProperty("rnk_ph_denies")]
-        public long RnkPhDenies { get; set; }
+        public long? RnkPhDenies { get; set; }
 
         [JsonProperty("rnk_ph_exp")]
-        public long RnkPhExp { get; set; }
+        public long? RnkPhExp { get; set; }
 
         [JsonProperty("rnk_ph_gold")]
-        public long RnkPhGold { get; set; }
+        public long? RnkPhGold { get; set; }
 
         [JsonProperty("rnk_ph_actions")]
-        public long RnkPhActions { get; set; }
+        public long? RnkPhActions { get; set; }
 
         [JsonProperty("rnk_ph_time_earning_exp")]
-        public long RnkPhTimeEarningExp { get; set; }
+        public long? RnkPhTimeEarningExp { get; set; }
     }
 }

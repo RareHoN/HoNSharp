@@ -13,6 +13,6 @@ namespace HoNSharp.Models
         public string Success { get; set; }
 
         [JsonProperty("hosttime")]
-        public long Hosttime { get; set; }
+        public long? Hosttime { get; set; }
     }
 }
