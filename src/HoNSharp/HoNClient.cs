@@ -51,14 +51,15 @@ namespace HoNSharp
         }
 
         /// <inheritdoc />
-        public async Task<Response<Dictionary<string, string>>> GetMatchHistoryOverviewAsync(string nickname, Map map)
+        public async Task<Response<Dictionary<string, string>>> GetMatchHistoryOverviewAsync(string nickname, GameMode gameMode)
         {
-            var table = map switch
+            var table = gameMode switch
             {
-                Map.ForestsOfCaldavar => "campaign",
-                Map.Midwars           => "midwars",
-                Map.Public            => "player",
-                _                     => string.Empty
+                GameMode.CoN => "campaign",
+                GameMode.Midwars => "midwars",
+                GameMode.Public => "player",
+                GameMode.Casual => "campaign_casual",
+                _ => throw new ArgumentException("Unknown value for the parameter.", nameof(gameMode))
             };
 
             return await PostAsync<Dictionary<string, string>>(
@@ -73,13 +74,15 @@ namespace HoNSharp
         }
 
         /// <inheritdoc />
-        public async Task<Response<CampaignStatsResponse>> GetCampaignStatsAsync(string nickname, Map map)
+        public async Task<Response<CampaignStatsResponse>> GetCampaignStatsAsync(string nickname, GameMode gameMode)
         {
-            var table = map switch
+            var table = gameMode switch
             {
-                Map.ForestsOfCaldavar => "campaign",
-                Map.Midwars => "midwars",
-                _ => string.Empty
+                GameMode.CoN => "campaign",
+                GameMode.Midwars => "midwars",
+                GameMode.Public => "player",
+                GameMode.Casual => "campaign_casual",
+                _ => throw new ArgumentException("Unknown value for the parameter.", nameof(gameMode))
             };
 
             return await PostAsync<CampaignStatsResponse>(
@@ -129,6 +132,19 @@ namespace HoNSharp
                     { "f", "grab_last_matches_from_nick" },
                     { "nickname", nickname },
                     { "hosttime", "0" },
+                    { "cookie", _cookie }
+                });
+        }
+
+        /// <inheritdoc />
+        public async Task<Response<AwardSummaryResponse>> GetAwardSummaryAsync(string nickname)
+        {
+            return await PostAsync<AwardSummaryResponse>(
+                "/client_requester.php",
+                new Dictionary<string, string>
+                {
+                    { "f", "get_player_award_summ" },
+                    { "nickname", nickname },
                     { "cookie", _cookie }
                 });
         }

@@ -10,6 +10,7 @@ An API library to communicate with api.kongor.online.
 * `GetMasteryStatsAsync`
 * `GetSimpleStatsAsync`
 * `GetLastPlayerMatchesAsync`
+* `GetAwardSummaryAsync`
 * `GetAllHeroStatsAsync`
 
 ## Example

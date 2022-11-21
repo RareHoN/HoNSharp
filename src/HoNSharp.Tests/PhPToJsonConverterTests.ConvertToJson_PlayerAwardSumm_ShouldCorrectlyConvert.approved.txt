@@ -1,0 +1,14 @@
+﻿{
+  "awd_hcs": 27,
+  "awd_ledth": 21,
+  "awd_lgks": 23,
+  "awd_mann": 0,
+  "awd_masst": 17,
+  "awd_mbdmg": 30,
+  "awd_mhdd": 21,
+  "awd_mkill": 19,
+  "awd_mqk": 4,
+  "awd_msd": 0,
+  "awd_mwk": 0,
+  "mvp": 19
+}

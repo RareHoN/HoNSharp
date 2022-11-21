@@ -14,6 +14,7 @@
     <None Remove="TestData\get_match_stats_datetimeoffset_error_response.txt" />
     <None Remove="TestData\get_match_stats_response.txt" />
     <None Remove="TestData\get_match_stats_unexpected_character_error_response.txt" />
+    <None Remove="TestData\get_player_award_summ_response.txt" />
     <None Remove="TestData\match_history_overview_empty_response.txt" />
     <None Remove="TestData\match_history_overview_midwars_response.txt" />
     <None Remove="TestData\match_history_overview_normal_response.txt" />

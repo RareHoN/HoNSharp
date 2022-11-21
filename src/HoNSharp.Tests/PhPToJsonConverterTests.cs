@@ -226,6 +226,21 @@ namespace HoNSharp.Tests
             _ = JsonConvert.DeserializeObject<SimpleStatsResponse>(result);
         }
 
+        [Fact]
+        public void ConvertToJson_PlayerAwardSumm_ShouldCorrectlyConvert()
+        {
+            // Arrange
+            var responseFileContent = ReadFile("get_player_award_summ_response.txt");
+
+            // Act
+            var result = _converter.ConvertToJson(responseFileContent);
+
+            // Assert
+            Approvals.Verify(FormatJson(result));
+
+            _ = JsonConvert.DeserializeObject<AwardSummaryResponse>(result);
+        }
+
         private string ReadFile(string responseFileName)
         {
             var responseFilePath = Path.Combine(Directory.GetCurrentDirectory(), "TestData", responseFileName);

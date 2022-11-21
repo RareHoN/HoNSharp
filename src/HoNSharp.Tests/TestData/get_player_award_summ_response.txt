@@ -1,0 +1,1 @@
+﻿a:12:{s:7:"awd_hcs";i:27;s:9:"awd_ledth";i:21;s:8:"awd_lgks";i:23;s:8:"awd_mann";i:0;s:9:"awd_masst";i:17;s:9:"awd_mbdmg";i:30;s:8:"awd_mhdd";i:21;s:9:"awd_mkill";i:19;s:7:"awd_mqk";i:4;s:7:"awd_msd";i:0;s:7:"awd_mwk";i:0;s:3:"mvp";i:19;}

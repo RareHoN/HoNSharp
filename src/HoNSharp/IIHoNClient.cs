@@ -25,14 +25,14 @@ namespace HoNSharp
         /// </summary>
         /// <param name="nickname">Player nickname.</param>
         /// <param name="map">Map.</param>
-        Task<Response<Dictionary<string, string>>> GetMatchHistoryOverviewAsync(string nickname, Map map);
+        Task<Response<Dictionary<string, string>>> GetMatchHistoryOverviewAsync(string nickname, GameMode map);
 
         /// <summary>
         /// Get campaign stats for the player.
         /// </summary>
         /// <param name="nickname">Player nickname.</param>
         /// <param name="map">Map.</param>
-        Task<Response<CampaignStatsResponse>> GetCampaignStatsAsync(string nickname, Map map);
+        Task<Response<CampaignStatsResponse>> GetCampaignStatsAsync(string nickname, GameMode map);
 
         /// <summary>
         /// Get mastery stats for the player.
@@ -51,6 +51,12 @@ namespace HoNSharp
         /// </summary>
         /// <param name="nickname">Player nickname.</param>
         Task<Response<LastPlayerMatchesResponse>> GetLastPlayerMatchesAsync(string nickname);
+
+        // <summary>
+        /// Get the player's award summary.
+        /// </summary>
+        /// <param name="nickname">Player nickname.</param>
+        Task<Response<AwardSummaryResponse>> GetAwardSummaryAsync(string nickname);
 
         /// <summary>
         /// Get stats for all heroes.
